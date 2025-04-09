@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Tracking Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    canvas {
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Time Tracking & Productivity Analysis</h1>
+  <canvas id="chart"></canvas>
+  
+  <script>
+    fetch("http://localhost:5000/api/logs")
+      .then(response => response.json())
+      .then(data => {
+        const urls = {};
+        data.forEach(log => {
+          urls[log.url] = (urls[log.url] || 0) + log.duration;
+        });
+        
+        const labels = Object.keys(urls);
+        const durations = Object.values(urls);
+
+        new Chart(document.getElementById("chart"), {
+          type: "pie",
+          data: {
+            labels: labels,
+            datasets: [{
+              data: durations,
+              backgroundColor: ["red", "blue", "green", "orange", "purple"]
+            }]
+          }
+        });
+      })
+      .catch(error => console.error("Error loading data:", error));
+  </script>
+</body>
+</html>
