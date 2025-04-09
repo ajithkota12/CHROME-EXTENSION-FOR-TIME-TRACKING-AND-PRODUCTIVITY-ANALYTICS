@@ -88,3 +88,12 @@ Add goal-setting and notification features to alert users when they've exceeded 
 
 Conclusion:
 This Time Tracking & Productivity Analytics Chrome Extension is a powerful tool for self-awareness and time management. It helps users reclaim lost hours, improve focus, and increase productivity by providing clear, visual insights into their browsing habits. The combination of frontend UI, Chrome APIs, and a backend with database support makes this a robust full-stack application suitable for personal or professional use.
+
+
+OUTPUT:
+
+![Image](https://github.com/user-attachments/assets/2b867142-a2b0-460f-a2b8-6333f0bfa3c0)
+
+![Image](https://github.com/user-attachments/assets/109e43b6-e063-4c0b-9ba9-6f1cec46e676)
+
+![Image](https://github.com/user-attachments/assets/a92e39d8-d2b9-4c24-ac7d-3f288c742095)
